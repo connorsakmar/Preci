@@ -1,0 +1,35 @@
+---
+title: "Preci"
+author: "Connor Sakmar"
+date: "October 19, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+```
+
+
+
+```{r, include = FALSE}
+deaths_data <- read.csv("NCHS_-_Leading_Causes_of_Death__United_States.csv")
+
+deaths_data %>%
+  filter(Year == 2009, State == "United States") %>%
+  arrange(desc(Deaths))
+```
+
+```{r}
+summary(deaths_data)
+```
+
+I have currently chosen the leading causes of death in the United States as my dataset for my final project. I really want to find medical data related to allergies/anaphylaxis, but if I am still unable to find a good dataset for that, then I will stick with the leading causes of death. I want to use this dataset to show that are other things than heart disease and cancer (the two most commonly referenced causes) that are killing people today. While cancer and heart disease might be the most prevalent, I would like to make several grapahics to show other important areas as well, such as Alzheimer's.
+
+
+
+
+
